@@ -1,0 +1,26 @@
+plugins {
+    id("java")
+    id("org.jetbrains.intellij") version "1.10.1"
+}
+
+group = "com.linuxgods.kreiger.intellij.idea.refactoring"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+intellij {
+    version = "2022.2"
+    type = "IU" // Target IDE Platform
+    plugins = ['com.intellij.java', 'IntelliLang']
+    updateSinceUntilBuild = false
+}
+
+compileJava {
+    options.release = 17
+}
+
+runIde {
+    jvmArgs '-Xmx4G'
+}

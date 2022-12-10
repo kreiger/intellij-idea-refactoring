@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>com.linuxgods.kreiger.refactoring</id>
+    <idea-version since-build="222"/>
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>PaymentIQ Developer Support Tools</name>
+
+    <vendor email="christoffer.hammarstrom@gmail.com">Christoffer Hammarström</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Refactoring support for Java, more inspections.
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <localInspection implementationClass="com.linuxgods.kreiger.refactoring.SaneIfElseInspection"
+                         enabledByDefault="true" language="JAVA"
+                         displayName="Sane if-else" groupName="Java" hasStaticDescription="true"/>
+    </extensions>
+</idea-plugin>
